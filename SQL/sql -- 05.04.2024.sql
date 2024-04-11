@@ -80,3 +80,8 @@ INSERT INTO TransactionCategory (category, transaction_type) VALUES
 ('Travel', 'spending'),
 ('Savings', 'income'),
 ('Bonus', 'income');
+
+
+ALTER TABLE savings
+ADD title VARCHAR(255),
+ADD current_amount DECIMAL(10, 2);
