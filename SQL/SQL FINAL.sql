@@ -1,7 +1,8 @@
-drop table TransactionCategory;
 drop table Transactions;
+drop table TransactionCategory;
 drop table Savings;
 drop table Users;
+
 
 
 
@@ -47,7 +48,7 @@ CREATE TABLE Transactions (
     transaction_id Serial PRIMARY KEY,
     user_id INT,
     category_id INT,
-    transaction_type VARCHAR(20) CHECK(transaction_type IN ('income', 'spending'))
+    transaction_type VARCHAR(20) CHECK(transaction_type IN ('income', 'spending')),
     name VARCHAR(100) NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     receipt_image BYTEA,
@@ -59,7 +60,7 @@ CREATE TABLE Transactions (
 );
 
 
-INSERT INTO TransactionCategory (category, transaction_type) VALUES
+INSERT INTO TransactionCategory (category_description) VALUES
 ('Groceries'),
 ('Salary'),
 ('Utilities'),
@@ -73,4 +74,3 @@ INSERT INTO TransactionCategory (category, transaction_type) VALUES
 ('Travel'),
 ('Savings'),
 ('Bonus');
-
